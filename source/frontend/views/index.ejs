@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Cabeçalho  -->
+
+    <header class="container-fluid bg-dark p-3">
+        <div class="row">
+            <div class="col d-flex align-items-center">
+                <h4 class="navbar-brand text-light">Agenda</h4>
+            </div>
+        </div>
+    </header>
+
+    <!-- Título de Login -->
+
+    <div class="container mt-4 text-center">
+        <h1>Login</h1>
+        <p>Faça seu cadastro ou realize seu login.</p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="row justify-content-center">
+    
+                    <% if (typeof alertType !== 'undefined' && typeof alertText !== 'undefined'){ %>
+                        <div class="alert alert-<%=alertType%> fade show alert-dismissible">
+                            <%=alertText%>
+                            <button class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    <% } %>
+    
+                    <!-- Formulário de Cadastro    -->
+        
+                    <form class="col" action="/cadastro/" method="post">
+                        <h4>Faça seu cadastro</h4>
+                        <p>Preencha o formulário abaixo:</p>
+                        <div class="mb-3">
+                          <label for="email-de-cadastro" class="form-label">E-mail:</label>
+                          <input type="email" class="form-control" id="email-de-cadastro" name="email-de-cadastro" aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="senha-de-cadastro" class="form-label">Senha:</label>
+                          <input type="password" class="form-control" id="senha-de-cadastro" name="senha-de-cadastro" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirme-sua-senha-de-cadastro" class="form-label">Confirme sua senha:</label>
+                            <input type="password" class="form-control" id="confirme-sua-senha-de-cadastro" name="confirme-sua-senha-de-cadastro" required>
+                          </div>
+                        <button type="submit" class="btn btn-primary">Criar Conta</button>
+                      </form>
+        
+                    <!-- Formulário de Login    -->
+        
+                    <form class="col" action="/login/" method="post">
+                        <h4>Faça seu login</h4>
+                        <p>Preencha o formulário abaixo:</p>
+                        <div class="mb-3">
+                            <label for="email-de-login" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" id="email-de-login" name="email-de-login" aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha-de-login" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="senha-de-login" name="senha-de-login" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
